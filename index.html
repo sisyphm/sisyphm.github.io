@@ -84,11 +84,13 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .note { margin: 14px 0 0; font-size: 12.5px; color: var(--mute); }
 
 .cv { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.cv li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 20px; align-items: baseline; }
-.cv .what { margin: 0; color: var(--ink); font-weight: 500; font-family: var(--head); }
-.cv .where { margin: 0; grid-column: 1; font-size: 13.5px; }
-.cv .when { grid-column: 2; grid-row: 1; font: 400 12.5px var(--mono); color: var(--mute); white-space: nowrap; }
-.cv .desc { margin: 2px 0 0; grid-column: 1 / -1; font-size: 13.5px; color: var(--mute); }
+.cv { gap: 14px; }
+.cv li { display: grid; grid-template-columns: 40px minmax(0, 1fr) 17ch; gap: 0 14px; align-items: baseline; }      /* logo | text | fixed-width date box (start dates line up) */
+.cv .logo { grid-column: 1; grid-row: 1 / span 3; align-self: start; width: 40px; height: 40px; object-fit: contain; margin-top: 1px; }
+.cv .what { margin: 0; grid-column: 2; color: var(--ink); font-weight: 500; font-family: var(--head); }
+.cv .when { grid-column: 3; font: 400 12.5px var(--mono); color: var(--mute); white-space: nowrap; }
+.cv .where { margin: 0; grid-column: 2 / -1; font-size: 13.5px; }
+.cv .desc { margin: 2px 0 0; grid-column: 2 / -1; font-size: 13.5px; color: var(--mute); }
 .news time.tbd { color: #b0563f; }
 .mail { margin: 12px 0 0; font: 400 12.5px var(--mono); color: var(--ink); }
 .personal { margin: 0; }
@@ -104,8 +106,10 @@ footer { margin-top: 56px; padding-top: 12px; border-top: 1px solid var(--line);
   .ko, .role { grid-column: 2; }
   .role { margin-top: 4px; }
   .bio, .links, .mail { grid-column: 1 / -1; }
-  .cv li { grid-template-columns: minmax(0, 1fr); }
-  .cv .when { grid-column: 1; grid-row: auto; margin-top: 2px; white-space: normal; }
+  .cv li { grid-template-columns: 36px minmax(0, 1fr); gap: 0 12px; }
+  .cv .logo { width: 36px; height: 36px; grid-row: 1 / span 4; }
+  .cv .when { grid-column: 2; grid-row: 2; margin-top: 1px; white-space: normal; }
+  .cv .where, .cv .desc { grid-column: 2; }
   .pub { grid-template-columns: minmax(0, 1fr); gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .thumb video, a { transition: none; } }
@@ -167,15 +171,15 @@ footer { margin-top: 56px; padding-top: 12px; border-top: 1px solid var(--line);
     <section class="sec" aria-labelledby="edu-h">
       <h2 id="edu-h">Education</h2>
       <ul class="cv">
-        <li><p class="what">Seoul National University</p><p class="where">M.S. in Computer Science and Engineering (incoming), advised by Prof. Jaesik Park</p><span class="when">2027.03 –</span></li>
-        <li><p class="what">Seoul National University</p><p class="where">B.S. in Computer Science and Engineering</p><span class="when">2023.03 – 2027.02 (expected)</span></li>
+        <li><img class="logo" src="media/snu.png" alt="" width="40" height="40"><p class="what">Seoul National University</p><span class="when">2027.03 –</span><p class="where">M.S. in Computer Science and Engineering (incoming), advised by Prof. Jaesik Park</p></li>
+        <li><img class="logo" src="media/snu.png" alt="" width="40" height="40"><p class="what">Seoul National University</p><span class="when">2023.03 – 2027.02</span><p class="where">B.S. in Computer Science and Engineering</p></li>
       </ul>
     </section>
 
     <section class="sec" aria-labelledby="exp-h">
       <h2 id="exp-h">Experience</h2>
       <ul class="cv">
-        <li><p class="what">Seoul National University</p><p class="where">Research Intern, advised by Prof. Jaesik Park</p><span class="when">2025.01 – Present</span><p class="desc">Video world models and 4D reconstruction.</p></li>
+        <li><img class="logo" src="media/snu.png" alt="" width="40" height="40"><p class="what">Seoul National University</p><span class="when">2025.01 – Present</span><p class="where">Research Intern, advised by Prof. Jaesik Park</p><p class="desc">Video world models and 4D reconstruction.</p></li>
       </ul>
     </section>
 
